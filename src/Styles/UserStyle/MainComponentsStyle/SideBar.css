@@ -1,0 +1,161 @@
+/* --- Variable setup --- */
+:root {
+    --c-backgroundSideBar: #000000;
+    --c-fontSideBar: #76847e;
+    --c-backgroundHoverSideBar: #03d47c;
+    --c-fontHover: #fff;
+    --c-activeBackgroundSideBar : #03d47c;
+    --c-backgroundMain: #FCFBF9;
+}
+
+
+/* --- Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none !important;
+}
+
+/* --- Body --- */
+.container_ {
+    /* position: fixed; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar-main-container {
+    gap: 50px;
+}
+
+.navbar-container {
+    min-height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: var(--c-backgroundSideBar);
+    border-bottom: 1px solid #0a301a;
+}
+
+.side-bar {
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+    /* background: linear-gradient(#0081f1, #c3f2ff); */
+    background-color: var(--c-backgroundSideBar);
+    color: var(--c-fontSideBar);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.this__ {
+    /* margin: 0px; */
+    padding-right: 0px;
+    padding-left: 0px;
+    background: var(--c-backgroundMain);
+}
+
+.this_ {
+    margin: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    /* background-color: aqua; */
+}
+
+.this {
+    padding-right: 0px;
+    padding-left: 0px;
+    /* background-color: #03d47c; */
+    /* background: var(--c-backgroundMain); */
+}
+
+main {
+    /* position: relative; */
+    /* right: -36px; */
+    /* background-color: red; */
+    /* width: 80rem !important; */
+}
+
+.top-section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin: 15px 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.logo {
+    /* display: flex; */
+    font-size: 50px;
+    /* font-weight: 700; */
+}
+
+.bar {
+    display: flex;
+    font-size: 35px;
+    /* font-weight: 700; */
+    /* margin-left: 0px; */
+}
+
+.body-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 15px;
+    /* margin: 5px 0px; */
+    color: var(--c-fontSideBar);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.link-icon {
+    display: flex;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.link-text {
+    display: flex;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+
+/* --- Animation --- */
+.link:hover {
+    background-color: var(--c-backgroundHoverSideBar);
+    color: var(--c-fontHover);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+
+/* --- Active --- */
+.active {
+    background: var(--c-backgroundHoverSideBar);
+    color: var(--c-fontHover);
+}
