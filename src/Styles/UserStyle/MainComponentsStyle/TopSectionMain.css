@@ -1,0 +1,15 @@
+.top-section-main {
+    /* padding: 13px; */
+    z-index: 1;
+    position: fixed;
+    top: 50px;
+    margin-left: -22px;
+    border-bottom: 1px solid #ebe6df;
+    border-top: 1px solid #ebe6df;
+    background-color: #FCFBF9;
+    /* background-color: red; */
+}
+
+.top-section-main-title {
+    font-size: 30px;
+}
