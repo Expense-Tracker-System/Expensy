@@ -14,12 +14,25 @@
     margin-top: 80px;
 }
 
-.bank-acc-container-top-section-title {
-    font-size: 50px;
+
+/* --- Save Section --- */
+.save-acc-item {
+    justify-content: space-between;
+    box-shadow: 1px 2px 2px 1px var(--c-fontSideBar);
 }
 
+.save-acc-delete {
+    font-size: 40px;
+}
+
+.save-acc-delete-icon {
+    cursor: pointer;
+}
+
+
+/* --- Add New Acc --- */
 .bank-acc-container-body-section-image {
-    font-size: 120px;
+    font-size: 150px;
 }
 
 .bank-acc-card {
@@ -41,4 +54,12 @@
 .bank-submit-btn:hover {
     background-color: var(--c-btnHover);
     color: var(--c-fontHover);
+}
+
+.save-acc-delete-icon:hover {
+    color: red;
+}
+
+.acc-input:focus {
+    outline: var(--c-activeBackgroundSideBar);
 }
