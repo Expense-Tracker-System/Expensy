@@ -77,7 +77,7 @@ function BankAccount(){
                                             return(
                                                 <div className='save-acc-item d-flex flex-row mb-2' key={index}>
                                                     <div className='col-8 d-flex flex-column pt-3 px-5'>
-                                                        <h2>{"***"+item.accNo.slice(3)}</h2>
+                                                        <h2>{"*****"+item.accNo.slice(3)}</h2>
                                                         <p className='p-0 m-0'>{item.bankName}</p>                                              
                                                         <p className=''>{item.branchName}</p>
                                                     </div>
