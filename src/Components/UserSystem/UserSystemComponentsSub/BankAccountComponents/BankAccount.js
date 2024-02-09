@@ -1,13 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../../Styles/UserStyle/SubComponentsStyle/BankAccountStyle/BankAccount.css';
 import '../../../../Styles/UserStyle/MainComponentsStyle/TopSectionMain.css';
 
-import { FaIdCard } from "react-icons/fa";
+import { MdOutlineAccountBalance } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
 
 function BankAccount(){
+    const[accArr,setAccArr] = useState([]);
+    const[accNo,setAccNo] = useState("");
+    const[bankName,setBankName] = useState("");
+    const[branchName,setBranchName] = useState("");
+
+    const handelDeleteAcc = (index) => {
+        let saveAcc = [...accArr];
+
+        if(saveAcc){
+            saveAcc.splice(index,1);
+        }
+
+        setAccArr(saveAcc);
+
+        localStorage.setItem('accItem',JSON.stringify(saveAcc));
+    }
+
+    const handelAddAcc = () => {
+        let accItem = {
+            accNo: accNo,
+            bankName: bankName,
+            branchName: branchName
+        };
+        
+        let updateAccItemArr = [...accArr];
+
+        // if(accItem.accNo !== "" & accItem.bankName !== "" & accItem.branchName !== ""){
+        //     updateAccItemArr.push(accItem);
+
+        //     setAccArr(updateAccItemArr);
+        // }
+
+        updateAccItemArr.push(accItem);
+
+        localStorage.setItem('accList',JSON.stringify(updateAccItemArr));
+
+        setAccArr(updateAccItemArr);
+        console.log(accArr);
+        
+    }
+
+    useEffect(() => {
+        let saveAccItem = JSON.parse(localStorage.getItem('accList'));
+
+        if(saveAccItem){
+            setAccArr(saveAccItem);
+        }
+    },[])
+
     return(
         <section className="h-100 w-100">
-            <div class="bank-acc-container w-100">
+            <div className="bank-acc-container w-100">
                 <div className='row w-100'>
                     <div className='col top-section-main py-3'>
                         <h1 className='top-section-main-title px-3'>BankAccount</h1>
@@ -16,75 +66,67 @@ function BankAccount(){
 
                 <div className='row d-flex w-100'>
                     <div className='col-sm-12 py-1 px-md-5 h-100 w-100'>
-                        <form>
-                            <p class="fw-bold mb-4 pb-2">Saved Accounts:</p>
+                        {/* <form> */}
+                            <p className="fw-bold my-3 mb-2 pb-2">Saved Accounts:</p>
 
                             <div className='card d-flex flex-column justify-content-center h-100 p-3 bank-acc-card w-100'>
-                                <div className='card-body d-flex'>
-                                    <div class="d-flex flex-row align-items-center mb-4 pb-1 bank-card-body-section-save-item">
-                                        <div class="flex-fill mx-3">                                                                           
-                                            <div class="form-outline">
-                                                <input type="text" id="formControlLgXc" class="form-control form-control-lg"
-                                                    value="**** **** **** 3193" />
-                                                <label class="form-label" for="formControlLgXc">Card Number</label>
-                                            </div>
-                                        </div>
-                                        <a href="#!">Remove card</a>
-                                    </div>
+                                <div className='card-body d-flex flex-column'>
 
-                                    <div class="d-flex flex-row align-items-center mb-4 pb-1 bank-card-body-section-save-item">
-                                        <div class="flex-fill mx-3">
-                                            <div class="form-outline">
-                                                <input type="text" id="formControlLgXs" class="form-control form-control-lg"
-                                                    value="**** **** **** 4296" />
-                                                <label class="form-label" for="formControlLgXs">Card Number</label> 
-                                            </div>
-                                        </div>
-                                        <a href="#!">Remove card</a>
-                                    </div> 
+                                    {
+                                        accArr.map((item,index) => {
+                                            return(
+                                                <div className='save-acc-item d-flex flex-row mb-2' key={index}>
+                                                    <div className='col-8 d-flex flex-column pt-3 px-5'>
+                                                        <h2>{"*****"+item.accNo.slice(3)}</h2>
+                                                        <p className='p-0 m-0'>{item.bankName}</p>                                              
+                                                        <p className=''>{item.branchName}</p>
+                                                    </div>
+                                                    <div className='col-2 d-flex justify-content-center pt-3 save-acc-delete'>
+                                                        <AiOutlineDelete onClick={() =>handelDeleteAcc(index)} className='save-acc-delete-icon' />                                                                                                                   
+                                                    </div>
+                                                </div>
+                                            );
+                                        })
+                                    }
+
                                 </div> 
                             </div>
 
-                            <p class="fw-bold mb-4 pb-2">Add new Account:</p>
+                            <p className="fw-bold my-5 mb-2 pb-2">Add new Account:</p>
 
-                            <div class="row d-flex justify-content-center align-items-center h-100">
-                                <div class="col bank-acc-container-body-section">
-                                    <div class="card bank-acc-card rounded-3 p-3">
+                            <div className="row d-flex justify-content-center align-items-center h-100">
+                                <div className="col bank-acc-container-body-section">
+                                    <div className="card bank-acc-card rounded-3 p-3">
                                         <div className='w-100 d-flex justify-content-center align-items-center bank-acc-container-body-section-image'>
-                                            <FaIdCard />
+                                            <MdOutlineAccountBalance />
                                         </div>
-                                    <div class="card-body px-md-5">
-                                        <h3 class="mb-2 pb-2 pb-md-0 mb-md-4 px-md-2">Bank Info</h3>
+                                    <div className="card-body px-md-5">
+                                        <h3 className="mb-2 pb-2 pb-md-0 mb-md-4 px-md-2">Bank Info</h3>
 
-                                        <div class="form-outline mb-2 bank-acc-container-body-section-input">
-                                            <input type="text" id="form3Example1q" class="form-control" />                                         
-                                            <label class="form-label" for="form3Example1q">Card Holder's Name(it appears on card)</label>
-                                        </div>
-
-                                        <div class="form-outline mb-2 bank-acc-container-body-section-input">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
-                                            <label for="exampleDatepicker1" class="form-label">Card Number</label>
+                                        <div className="form-outline mb-2 bank-acc-container-body-section-input">
+                                            <input type="text" value={accNo} onChange={(e) => setAccNo(e.target.value)} id="form3Example1q" className="form-control acc-input" />                                         
+                                            <label className="form-label" for="form3Example1q">Account No</label>
                                         </div>
 
-                                        <div class="form-outline mb-2 bank-acc-container-body-section-input">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
-                                            <label for="exampleDatepicker1" class="form-label">Security Code</label>
+                                        <div className="form-outline mb-2 bank-acc-container-body-section-input">
+                                            <input type="text" value={bankName} onChange={(e) => setBankName(e.target.value)} className="form-control acc-input" id="exampleDatepicker1" />
+                                            <label for="exampleDatepicker1" className="form-label">Bank Name</label>
                                         </div>
 
-                                        <div class="form-outline mb-2 bank-acc-container-body-section-input">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
-                                            <label for="exampleDatepicker1" class="form-label">Expire Date</label>
+                                        <div className="form-outline mb-2 bank-acc-container-body-section-input">
+                                            <input type="text" value={branchName} onChange={(e) => setBranchName(e.target.value)} className="form-control acc-input" id="exampleDatepicker1" />
+                                            <label for="exampleDatepicker1" className="form-label">Branch Name</label>
                                         </div>
 
                                         <div className='bank-submit d-flex justify-content-center w-100'>
-                                            <button type="submit" className="btn bank-submit-btn d-flex justify-content-center btn-lg mb-1">Submit</button>
+                                            <button type="submit" onClick={handelAddAcc} className="btn bank-submit-btn d-flex justify-content-center btn-lg mb-1">Submit</button>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    {/* </form> */}
                 </div>
                 </div>
 
