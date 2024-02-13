@@ -1,6 +1,8 @@
 import React from 'react';
 import SideBar from "./Components/UserSystem/UserSystemComponentsMain/UserSideBar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // import logo from './logo.svg';
 // import './App.css';
 
