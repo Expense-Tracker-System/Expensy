@@ -8,9 +8,9 @@ const localizer = momentLocalizer(moment);
 
 const myEventsList = [
   {
-    start: moment("2024-02-01T14:00:00").toDate(),
-    end: moment("2024-02-01T14:00:00").toDate(),
-    title: "special event",
+    start: moment("2024-02-27T14:00:00").toDate(),
+    end: moment("2024-02-27T14:00:00").toDate(),
+    title: "Birthday",
   },
   {
     start: moment("2024-02-01T14:00:00").toDate(),
