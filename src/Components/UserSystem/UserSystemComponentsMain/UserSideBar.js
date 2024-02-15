@@ -75,7 +75,7 @@ const SideBar = ({ children }) => {
         },
         {
             path:"/organization",
-            name:"Organization",
+            name:"Reminders",
             icon:<RiOrganizationChart />
         },
         {
