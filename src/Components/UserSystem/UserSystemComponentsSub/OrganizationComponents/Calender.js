@@ -32,8 +32,7 @@ const MyCalendar = (props) => {
     console.log("shdcjg")
   };
   return (
-    <div>
-      <Calendar
+    <div><Calendar
         localizer={localizer}
         events={myEventsList}
         startAccessor="start"
@@ -41,7 +40,7 @@ const MyCalendar = (props) => {
         selectable={true}
         onSelectSlot={handlePopup}
         style={{ height: 500 }}
-        views={{ month: true, week: true }}
+        views={{ month: true }}
       />
 
       <Reminderset open={open} setOpen={setOpen} />

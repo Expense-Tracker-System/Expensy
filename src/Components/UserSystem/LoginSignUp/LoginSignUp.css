@@ -1,0 +1,167 @@
+/* ------ Setup Variables ------ */
+:root {
+    --c-primary: #0064d7;
+    --c-black: #000000;
+    --c-white: #ffffff;
+    --c-background: #eeeeee;
+    --c-backgroundHoverLogin: #dadada;
+    --c-backgroundSideBar: #000000;
+    --c-fontSideBar: #76847e;
+    --c-backgroundHoverSideBar: #00b167;
+    --c-fontHover: #fff;
+    --c-activeBackgroundSideBar : #03d47c;
+    --c-backgroundMain: #FCFBF9;
+}
+
+
+/* ------ Global ------ */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: 0;
+}
+
+
+/* ------ Body ------ */
+.container_ {
+    background: linear-gradient(#000000, #686868);
+}
+
+.card {
+    width: 500px !important;
+    margin: auto;
+}
+
+.card-body {
+    gap: 10px !important;
+    margin: auto;
+}
+
+
+/* --- Top of Body --- */
+.top-section {
+    gap: 5px;
+    margin: 5px auto;
+}
+
+.top-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--c-activeBackgroundSideBar);
+}
+
+.top-text-underline {
+    width: 50px;
+    height: 5px;
+    background-color: var(--c-activeBackgroundSideBar);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+/* --- Inputs of Body --- */
+.inputs-section {
+    gap: 10px;
+    margin: 20px 0px 5px;
+}
+
+.input {
+    background-color: var(--c-background);
+    padding: 10px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.input img {
+    width: 33px;
+    height: 22px;
+    font-size: 18px;
+    padding-right: 10px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.input-field {
+    background-color: transparent;
+    color: #797979;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 300px;
+}
+
+
+
+/* --- Lost password of Body --- */
+/* .lost-password-section {
+    margin-left: px;
+} */
+
+
+.lost-password-section span {
+    color: var(--c-primary);
+}
+
+
+/* --- Submit section --- */
+.submit-section {
+    gap: 20px;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--c-activeBackgroundSideBar);
+    color: var(--c-white);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    width: 85px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.submit-gray {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--c-activeBackgroundSideBar); */
+    /* color: var(--c-white); */
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    width: 85px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    color: #797979;
+    background-color: var(--c-background);
+}
+
+
+/* ------ Animation ------ */
+.lost-password-section span, .submit, .submit-gray:hover {
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: var(--c-backgroundHoverSideBar);
+    color: var(--c-white);
+}
+
+.submit-gray:hover {
+    background-color: var(--c-backgroundHoverLogin);
+    color: var(#797979);
+}

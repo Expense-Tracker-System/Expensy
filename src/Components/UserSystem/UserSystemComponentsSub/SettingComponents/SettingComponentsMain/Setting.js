@@ -1,83 +1,99 @@
-import React, { useState, useEffect } from 'react';
-import '../../../../../Styles/UserStyle/MainComponentsStyle/Setting.css';
-import '../../../../../Styles/UserStyle/MainComponentsStyle/TopSectionMain.css';
+import React, { useState, useEffect } from "react";
+import "../../../../../Styles/UserStyle/MainComponentsStyle/Setting.css";
+import "../../../../../Styles/UserStyle/MainComponentsStyle/TopSectionMain.css";
+import SideBar from "../../../UserSystemComponentsMain/UserSideBar";
+import { NavLink, Outlet } from "react-router-dom";
 
-import { NavLink, Outlet } from 'react-router-dom';
+const Setting = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(true); // Sidebar is initially open
+  useEffect(() => {
+    const handelResize = () => {
+      if (window.innerWidth < 600) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
 
-const Setting = ({children}) => {
-    const[isOpen, setIsOpen] = useState(true);
+    window.addEventListener("resize", handelResize);
 
-    useEffect(() => {
-        const handelResize = () => {
-            if(window.innerWidth < 600){
-                setIsOpen(false);
-            }
-            else{
-                setIsOpen(true);
-            }
-        };
+    return () => {
+      window.removeEventListener("resize", handelResize);
+    };
+  }, []);
 
-        window.addEventListener('resize', handelResize);
+  const menuItems = [
+    {
+      path: "settingBank",
+      name: "Bank",
+    },
+    {
+      path: "settingNotification",
+      name: "Notification",
+    },
+    {
+      path: "settingEmail",
+      name: "Email",
+    },
+    {
+      path: "settingAPI",
+      name: "API",
+    },
+    {
+      path: "settingTeam",
+      name: "Team",
+    },
+    {
+      path: "settingPassword",
+      name: "Password",
+    },
+  ];
 
-        return () => {
-            window.removeEventListener('resize', handelResize);
-        };
-
-    }, []);
-
-    const menuItems = [
-        {
-            path:"settingBank",
-            name:"Bank"
-        },
-        {
-            path:"settingNotification",
-            name:"Notification"
-        },
-        {
-            path:"settingEmail",
-            name:"Email"
-        },
-        {
-            path:"settingAPI",
-            name:"API"
-        },
-        {
-            path:"settingTeam",
-            name:"Team"
-        },
-        {
-            path:"settingPassword",
-            name:"Password"
-        }
-    ]
-
-    return(
-        <section className='h-100 w-100'>
-            <div className='px-0 container setting-container w-100'>
-                <div className='row'>
-                    <div className='col top-section-main py-3'>
-                        <h1 className='top-section-main-title px-3'>Setting</h1>
-                    </div>
-                </div>
-                <div className='row setting-top-bar'>
-                    <div className='col d-flex flex-column w-100'>
-                        {/* <h1 className='top-bar-title w-100'>Setting</h1> */}
-                        <div style={{flexDirection: isOpen ? "row" : "column", alignItems: isOpen ? "center" : "center"}} className='top-bar-items col-12 w-100'>
-                            {
-                                menuItems.map((item,index) => (
-                                    <NavLink to={item.path} key={index} style={{width: isOpen ? "100%" : "100%"}} className='setting-link col' activeclassName='active_'>
-                                        <div className='link_-text'>{item.name}</div>                                                                                              
-                                    </NavLink>
-                                ))
-                            }
-                        </div>
-                    </div>
-                </div>
-                <Outlet />
+  return (
+    <section className="h-100 w-100">
+      <div>
+        <main
+          className="col px-4 w-100"
+          style={{ marginLeft: isNavOpen ? "260px " : "62px", width: "110%" }}
+        >
+          <SideBar isOpen={isNavOpen} setIsOpen={setIsNavOpen} />
+        </main>
+      </div>
+      <div className="px-0 container setting-container" style={{ marginLeft: isNavOpen ? "250px" : "50px",width:'80%' }}>
+        <div className="row">
+          <div className="col top-section-main py-3">
+            <h1 className="top-section-main-title px-3">Setting</h1>
+          </div>
+        </div>
+        <div className="row setting-top-bar">
+          <div className="col d-flex flex-column w-100">
+            {/* <h1 className='top-bar-title w-100'>Setting</h1> */}
+            <div
+              style={{
+                flexDirection: isOpen ? "row" : "column",
+                alignItems: isOpen ? "center" : "center",
+              }}
+              className="top-bar-items col-12 w-100"
+            >
+              {menuItems.map((item, index) => (
+                <NavLink
+                  to={item.path}
+                  key={index}
+                  style={{ width: isOpen ? "100%" : "100%" }}
+                  className="setting-link col"
+                  activeclassName="active_"
+                >
+                  <div className="link_-text">{item.name}</div>
+                </NavLink>
+              ))}
             </div>
-        </section>
-    );
-}
+          </div>
+        </div>
+        <Outlet />
+      </div>
+    </section>
+  );
+};
 
 export default Setting;

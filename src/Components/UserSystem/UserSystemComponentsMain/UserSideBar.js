@@ -23,8 +23,8 @@ import {
 
 import { AiOutlineTransaction } from "react-icons/ai";
 
-const SideBar = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(true); // Sidebar is initially open
+const SideBar = ({isOpen,setIsOpen}) => {
+    
 
     // Function to toggle sidebar
     // const toggle = () => setIsOpen(!isOpen);
@@ -49,8 +49,8 @@ const SideBar = ({ children }) => {
 
     const menuItems = [
         {
-            path:"/",
-            name:"Home",
+            path:"/userDashBoard",
+            name:"Dashboard",
             icon:<MdOutlineDashboardCustomize />
         },
         {
@@ -84,7 +84,7 @@ const SideBar = ({ children }) => {
             icon:<TbReportSearch />
         },
         {
-            path:"/setting",
+            path:"/setting/settingBank",
             name:"Setting",
             icon:<MdOutlineSettings />
         },
@@ -203,7 +203,7 @@ const SideBar = ({ children }) => {
                                 }
                                 </div>
                             </div>
-                            <main className='col px-4 w-100' style={{marginLeft: isOpen ? "260px" : "62px", width: "110%"}}>{children}</main>
+                            {/* <main className='col px-4 w-100' style={{marginLeft: isOpen ? "260px" : "62px", width: "110%"}}>{children}</main> */}
                         </div>
                     </div>
                 </div>
