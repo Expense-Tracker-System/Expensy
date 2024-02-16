@@ -25,6 +25,8 @@ export default function Reminderset({ open, setOpen,rdate }) {
   const handleClose = () => {
     setOpen(false);
   };
+  
+  
 
   return (
     <Dialog

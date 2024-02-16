@@ -22,6 +22,11 @@ const myEventsList = [
     end: moment("2024-02-01T14:00:00").toDate(),
     title: "special event",
   },
+  // {
+  //   start: moment("Feb 15 2024").toDate(),
+  //   end: moment("Feb 15 2024").toDate(),
+  //   title: "special event",
+  // },
 ];
 
 const MyCalendar = (props) => {
@@ -29,7 +34,7 @@ const MyCalendar = (props) => {
   const [open, setOpen] = useState(false);
 
   const handlePopup = (event) => {
-    const selectedDate = moment(event.start).format('MMMM D,YYYY');
+    const selectedDate = moment(event.start).format('MMMM D,YYYY');;
     console.log(selectedDate);
     setrdate(selectedDate)
     setOpen(true);
