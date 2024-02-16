@@ -31,19 +31,19 @@ ChartJs.register(
 function Dashboard() {
     const [isOpen, setIsOpen] = useState(true); // Sidebar is initially open
     const data = {
-        labels:['Mon', 'Tue' , 'Wen' , 'Thu' , 'Fri ', 'Sat' , ' Sun'],
+        labels:['Mon', 'Tue' , 'Wed' , 'Thu' , 'Fri ', 'Sat' , ' Sun'],
         datasets: [
             {
-                label: '3695678',
-                data: [3,6,9,5,6,7,8],
-                backgroundColor: 'aqua',
+                label: 'Income',
+                data: [100,200,300,400,500,600,700],
+                backgroundColor: '#07393C',
                 borderColor: 'black',
                 borderWidth: 1,
             },
             {
-                label: '8914568',
-                data: [8,9,1,4,5,6,8],
-                backgroundColor: 'blue',
+                label: 'Expense',
+                data: [80,300,100,400,50,400,300],
+                backgroundColor: '#93FF96',
                 borderColor: 'black',
                 borderWidth: 1,
             }
@@ -86,7 +86,7 @@ function Dashboard() {
                             <div className='p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded'>
                                 <div>
                                     <h3 className='fs-6'>Current Balance</h3>
-                                    <p className='fs-5'>$2000</p>
+                                    <p className='fs-5'>$600</p>
                                 </div>
             
                             </div>
@@ -95,7 +95,7 @@ function Dashboard() {
                             <div className='p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded'>
                                 <div>
                                     <h3 className='fs-6'>Total Income</h3>
-                                    <p className='fs-5'>$150000</p>
+                                    <p className='fs-5'>$3000</p>
                                 </div>
                             </div>
                         </div>
@@ -125,15 +125,14 @@ function Dashboard() {
                                 options = {options}
                             ></Bar>
                         </div>
-                        <div className='d-flex flex-row '>
+                        {/* <div className='d-flex flex-row '>
                         <div class="box-a"></div>
                             <div class="box-b"></div>
-                                <span className='span span1'>Expense</span>
-                                <span className='span span2'>Income</span>
-                            </div>
+                                {/* <span className='span span1'>Expense</span>
+                                <span className='span span2'>Income</span> */}
                         </div>
                     </div>
-                    <div className='col-2 bg-info mx-5 rounded position-relative'>
+                    {/* <div className='col-2 bg-info mx-5 rounded position-relative'>
                         <div className='row g-2 my-1 '>
                             <div className='p-3 bg-white shadow-sm d-flex justify-content-around align-items-center position-absolute top-0 start-50 translate-middle'>
                                 <h5>Limited Transaction</h5>
@@ -142,13 +141,13 @@ function Dashboard() {
                             </div>
                             <Button className='position-absolute top-100 start-50 translate-middle'>View Transaction</Button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className=' my-2'>
+                {/* <div className=' my-2'>
                     <h1 className='h1'>Amount Transfer</h1>
-                </div>
+                </div> */}
             
-                <div className='d-flex flex-row my-0 progessBar mx-1'>
+                {/* <div className='d-flex flex-row my-0 progessBar mx-1'>
                     <div className='row g-3 my-5 '>
                         <div className='col-md-3 my-0'>
                             <div className='p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded'>
@@ -180,7 +179,7 @@ function Dashboard() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
                 </div> 
             </div>

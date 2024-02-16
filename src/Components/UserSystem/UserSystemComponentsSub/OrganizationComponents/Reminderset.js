@@ -21,7 +21,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function Reminderset({ open, setOpen }) {
+export default function Reminderset({ open, setOpen,rdate }) {
   const handleClose = () => {
     setOpen(false);
   };
@@ -49,7 +49,7 @@ export default function Reminderset({ open, setOpen }) {
             autoFocus
             margin="dense"
             label="Date"
-            value={"2024/02/27"}
+            value={rdate}
             type="text"
             fullWidth
             disabled

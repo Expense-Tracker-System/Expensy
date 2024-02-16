@@ -15,11 +15,11 @@ function LoginSignUp() {
     navigate("/userDashboard");
   };
   const handleSubmit = () => {
-    alert("submited")
+    alert("Your details are Submitted. Please wait for moment verification")
   };
   return (
-    <div className="container_ vh-100">
-      <div className="row h-100">
+    <div className="container_ vh-100 w-100">
+      <div className="row h-100 w-100">
         <div className="col d-flex justify-content-center align-items-center h-100 w-100">
           <div className="card">
             <div className="card-body d-flex flex-column justify-content-center">

@@ -25,11 +25,16 @@ const myEventsList = [
 ];
 
 const MyCalendar = (props) => {
+  const [rdate,setrdate] = useState("");
   const [open, setOpen] = useState(false);
 
-  const handlePopup = () => {
+  const handlePopup = (event) => {
+    const selectedDate = moment(event.start).format('MMMM D,YYYY');
+    console.log(selectedDate);
+    setrdate(selectedDate)
     setOpen(true);
     console.log("shdcjg")
+  
   };
   return (
     <div><Calendar
@@ -43,7 +48,7 @@ const MyCalendar = (props) => {
         views={{ month: true }}
       />
 
-      <Reminderset open={open} setOpen={setOpen} />
+      <Reminderset rdate={rdate} open={open} setOpen={setOpen} />
     </div>
   );
 };
