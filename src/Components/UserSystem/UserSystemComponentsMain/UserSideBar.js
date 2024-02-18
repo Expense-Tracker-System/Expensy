@@ -23,7 +23,9 @@ import {
 
 import { AiOutlineTransaction } from "react-icons/ai";
 
-const SideBar = ({ children }) => {
+import { FaRegLightbulb } from "react-icons/fa";
+
+function SideBar() {
     const [isOpen, setIsOpen] = useState(true); // Sidebar is initially open
 
     // Function to toggle sidebar
@@ -92,6 +94,11 @@ const SideBar = ({ children }) => {
             path:"/transactions",
             name:"Transactions",
             icon:<AiOutlineTransaction />
+        },
+        {
+            path:"/remender",
+            name:"Remender",
+            icon:<FaRegLightbulb />
         }
     ];
 
@@ -189,9 +196,9 @@ const SideBar = ({ children }) => {
                     <div className='row w-100 this_'>
                         <div className='col d-flex flex-row w-100 this'>
                             <div style={{ width: isOpen ? "250px" : "50px", transition: isOpen ? "0.1s" : "0.1s"}} className='side-bar'>
-                                <div style={{ marginTop: isOpen ? "0px" : "60px" }} className='top-section'>
+                                {/* <div style={{ marginTop: isOpen ? "0px" : "60px" }} className='top-section'>
                                     <h1 style={{ display: isOpen ? "block" : "none" }} className='logo'>Logo</h1>
-                                </div>
+                                </div> */}
                                 <div style={{ paddingTop: isOpen ? "0px" : "10px" }} className='body-section'>
                                 {
                                     menuItems.map((item, index) => (
@@ -203,7 +210,7 @@ const SideBar = ({ children }) => {
                                 }
                                 </div>
                             </div>
-                            <main className='col px-4 w-100' style={{marginLeft: isOpen ? "260px" : "62px", width: "110%"}}>{children}</main>
+                            {/* <main className='col px-4 w-100' style={{marginLeft: isOpen ? "260px" : "50px", width: "110%"}}>{children}</main> */}
                         </div>
                     </div>
                 </div>

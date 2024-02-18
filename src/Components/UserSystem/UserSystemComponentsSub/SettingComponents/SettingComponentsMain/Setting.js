@@ -3,6 +3,7 @@ import '../../../../../Styles/UserStyle/MainComponentsStyle/Setting.css';
 import '../../../../../Styles/UserStyle/MainComponentsStyle/TopSectionMain.css';
 
 import { NavLink, Outlet } from 'react-router-dom';
+import SideBar from '../../../UserSystemComponentsMain/UserSideBar';
 
 const Setting = ({children}) => {
     const[isOpen, setIsOpen] = useState(true);
@@ -53,8 +54,9 @@ const Setting = ({children}) => {
     ]
 
     return(
-        <section className='h-100 w-100'>
-            <div className='px-0 container setting-container w-100'>
+        <section className=''>
+            <SideBar />
+            <div style={{paddingLeft: isOpen ? "262px" : "62px"}} className='setting-container w-100'>
                 <div className='row'>
                     <div className='col top-section-main py-3'>
                         <h1 className='top-section-main-title px-3'>Setting</h1>
