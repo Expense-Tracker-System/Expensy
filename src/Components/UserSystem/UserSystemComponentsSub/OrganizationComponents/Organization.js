@@ -2,6 +2,8 @@ import React, { useEffect, useState} from 'react';
 import '../../../../Styles/UserStyle/SubComponentsStyle/OrganizationStyle/Organization.css';
 import '../../../../Styles/UserStyle/MainComponentsStyle/TopSectionMain.css';
 import SideBar from '../../UserSystemComponentsMain/UserSideBar';
+import MyCalendar from '../OrganizationComponents/Calender'
+
 
 function Organization(){
     const [isOpen, setIsOpen] = useState(true); // Sidebar is initially open
@@ -30,14 +32,12 @@ function Organization(){
             <div style={{paddingLeft: isOpen ? "262px" : "62px"}} className='organization-container w-100 global'>
                 <div className='row'>
                     <div className='col top-section-main py-3'>
-                        <h1 className='top-section-main-title px-3'>Organization</h1>
+                        <h1 className='top-section-main-title px-3'>Reminders</h1>
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col organization-wrapper'>
-                        <div className=''>
-                            <h1>This is Organization</h1>
-                        </div>
+                        <MyCalendar />
                     </div>
                 </div>
             </div>

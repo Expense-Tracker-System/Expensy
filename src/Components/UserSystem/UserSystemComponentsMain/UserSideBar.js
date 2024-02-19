@@ -77,7 +77,7 @@ function SideBar() {
         },
         {
             path:"/organization",
-            name:"Organization",
+            name:"Reminders",
             icon:<RiOrganizationChart />
         },
         {
