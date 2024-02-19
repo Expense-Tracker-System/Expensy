@@ -2,7 +2,7 @@ import React from 'react';
 import SideBar from "./Components/UserSystem/UserSystemComponentsMain/UserSideBar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 
 import UserDashBoard from './Components/UserSystem/UserSystemComponentsSub/UserDashBoardComponents/UserDashBoard.js';
 import Analysis from './Components/UserSystem/UserSystemComponentsSub/AnalysisComponents/Analysis.js';
@@ -20,11 +20,12 @@ import SettingEmail from './Components/UserSystem/UserSystemComponentsSub/Settin
 import SettingAPI from './Components/UserSystem/UserSystemComponentsSub/SettingComponents/SettingComponentsSub/SettingAPI.js';
 import SettingTeam from './Components/UserSystem/UserSystemComponentsSub/SettingComponents/SettingComponentsSub/SettingTeam.js';
 import SettingPassword from './Components/UserSystem/UserSystemComponentsSub/SettingComponents/SettingComponentsSub/SettingPassword.js';
+import Remender from './Components/UserSystem/UserSystemComponentsSub/RemenderComponents/Remender.js';
 
 function App() {
   return (
     <Router>
-    <SideBar>
+    {/* <SideBar> */}
       <Routes>
         <Route path="/" element={<UserDashBoard />} />
         <Route path="userDashBoard" element={<UserDashBoard />} />
@@ -44,8 +45,9 @@ function App() {
           <Route path="settingPassword" element={<SettingPassword />} />
         </Route>
         <Route path="transactions" element={<Transactions />} />
+        <Route path="remender" element={<Remender />} />
       </Routes>
-    </SideBar>
+    {/* </SideBar> */}
   </Router>
   );
 }

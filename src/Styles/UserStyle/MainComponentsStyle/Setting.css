@@ -13,7 +13,11 @@
     margin-top: 80px;
 }
 
-.setting-top-bar {}
+.setting-top-bar {
+    /* display: flex; */
+    /* flex-wrap: wrap; Allow items to wrap to the next line */
+    /* overflow-x: auto; Add horizontal scrolling if needed */
+}
 
 /* .top-bar-title {
     font-size: 50px;
