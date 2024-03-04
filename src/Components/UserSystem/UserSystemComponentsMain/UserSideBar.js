@@ -85,7 +85,7 @@ const SideBar = ({isOpen,setIsOpen}) => {
         },
         {
             path:"/setting/settingBank",
-            name:"Setting",
+            name:"Settings",
             icon:<MdOutlineSettings />
         },
         {
