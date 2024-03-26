@@ -63,6 +63,7 @@ function LoginSignUp() {
                     className="input-icon"
                   ></img>
                   <input
+                    required
                     type="password"
                     placeholder="Password"
                     className="input-field"
@@ -78,6 +79,7 @@ function LoginSignUp() {
                       className="input-icon"
                     ></img>
                     <input
+                    required
                       type="password"
                       placeholder="Confirm Password"
                       className="input-field"

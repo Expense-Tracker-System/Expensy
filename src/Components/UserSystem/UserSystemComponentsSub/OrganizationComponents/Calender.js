@@ -7,21 +7,26 @@ import Reminderset from "./Reminderset";
 const localizer = momentLocalizer(moment);
 
 const myEventsList = [
+  // {
+  //   start: moment("2024-02-27T14:00:00").toDate(),
+  //   end: moment("2024-02-27T14:00:00").toDate(),
+  //   title: "Birthday",
+  // },
   {
-    start: moment("2024-02-27T14:00:00").toDate(),
-    end: moment("2024-02-27T14:00:00").toDate(),
+    start: moment("2024-03-12T14:00:00").toDate(),
+    end: moment("2024-03-12T14:00:00").toDate(),
+    title: "name",
+  },
+  {
+    start: moment("2024-02-01T14:00:00").toDate(),
+    end: moment("2024-02-01T14:00:00").toDate(),
+    title: "special event",
+  },
+  {
+    start: moment("2024-03-14T14:00:00").toDate(),
+    end: moment("2024-03-14T14:00:00").toDate(),
     title: "Birthday",
-  },
-  {
-    start: moment("2024-02-01T14:00:00").toDate(),
-    end: moment("2024-02-01T14:00:00").toDate(),
-    title: "special event",
-  },
-  {
-    start: moment("2024-02-01T14:00:00").toDate(),
-    end: moment("2024-02-01T14:00:00").toDate(),
-    title: "special event",
-  },
+  }
   // {
   //   start: moment("Feb 15 2024").toDate(),
   //   end: moment("Feb 15 2024").toDate(),

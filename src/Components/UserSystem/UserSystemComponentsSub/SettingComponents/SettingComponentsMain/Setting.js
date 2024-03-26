@@ -63,7 +63,7 @@ const Setting = ({ children }) => {
       <div className="px-0 container setting-container" style={{ marginLeft: isNavOpen ? "250px" : "50px",width:'80%' }}>
         <div className="row">
           <div className="col top-section-main py-3">
-            <h1 className="top-section-main-title px-3">Setting</h1>
+            <h1 className="top-section-main-title px-3">Settings</h1>
           </div>
         </div>
         <div className="row setting-top-bar">

@@ -70,8 +70,9 @@ const SideBar = ({isOpen,setIsOpen}) => {
         },
         {
             path:"/notifications",
-            name:"Notifications",
-            icon:<MdNotificationsNone />
+            name:"Budgets",
+            // icon:<MdNotificationsNone />
+            icon:<TbFileAnalytics />
         },
         {
             path:"/organization",
