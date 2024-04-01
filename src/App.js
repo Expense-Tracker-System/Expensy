@@ -8,8 +8,8 @@ import UserDashBoard from "./Components/UserSystem/UserSystemComponentsSub/UserD
 import Analysis from "./Components/UserSystem/UserSystemComponentsSub/AnalysisComponents/Analysis.js";
 import BankAccount from "./Components/UserSystem/UserSystemComponentsSub/BankAccountComponents/BankAccount.js";
 import BankCard from "./Components/UserSystem/UserSystemComponentsSub/BankCardComponents/BankCard.js";
-import Notifications from "./Components/UserSystem/UserSystemComponentsSub/NotificationsComponents/Notifications.js";
-import Organization from "./Components/UserSystem/UserSystemComponentsSub/OrganizationComponents/Organization.js";
+import Budgets from "./Components/UserSystem/UserSystemComponentsSub/BudgetsComponents/Budgets.js";
+import Reminder from "./Components/UserSystem/UserSystemComponentsSub/ReminderComponents/Reminder.js";
 import Report from "./Components/UserSystem/UserSystemComponentsSub/ReportComponents/Report.js";
 import Setting from "./Components/UserSystem/UserSystemComponentsSub/SettingComponents/SettingComponentsMain/Setting.js";
 import Transactions from "./Components/UserSystem/UserSystemComponentsSub/TransactionComponents/Transaction.js";
@@ -31,8 +31,8 @@ function App() {
         <Route path="analysis" element={<Analysis />} />
         <Route path="bankAccount" element={<BankAccount />} />
         <Route path="bankCard" element={<BankCard />} />
-        <Route path="notifications" element={<Notifications />} />
-        <Route path="organization" element={<Organization />} />
+        <Route path="notifications" element={<Budgets />} />
+        <Route path="organization" element={<Reminder />} />
         <Route path="report" element={<Report />} />
         <Route path="setting" element={<Setting />}>
           {/* <Route index element={<SettingBank />} /> */}

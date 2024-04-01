@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../../../../Styles/UserStyle/SubComponentsStyle/OrganizationStyle/Organization.css";
+import "../../../../Styles/UserStyle/SubComponentsStyle/ReminderStyle/Reminder.css";
 import "../../../../Styles/UserStyle/MainComponentsStyle/TopSectionMain.css";
-import MyCalendar from "../OrganizationComponents/Calender";
+import MyCalendar from "../ReminderComponents/Calender";
 import SideBar from "../../UserSystemComponentsMain/UserSideBar";
-function Organization() {
+function Reminder() {
   const [isOpen, setIsOpen] = useState(true); // Sidebar is initially open
   return (
     <div>
@@ -36,4 +36,4 @@ function Organization() {
   );
 }
 
-export default Organization;
+export default Reminder;

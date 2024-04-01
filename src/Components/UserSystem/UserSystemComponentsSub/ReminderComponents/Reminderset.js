@@ -8,7 +8,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 // import CloseIcon from '@mui/icons-material/Close';
 import Typography from "@mui/material/Typography";
-import "../../../../Styles/UserStyle/SubComponentsStyle/OrganizationStyle/Reminderset.css";
+import "../../../../Styles/UserStyle/SubComponentsStyle/ReminderStyle/Reminderset.css";
 import TextField from '@mui/material/TextField';
 import { DialogContentText } from "@mui/material";
 
